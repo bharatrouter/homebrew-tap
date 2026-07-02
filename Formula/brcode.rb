@@ -2,8 +2,8 @@ class Brcode < Formula
   desc "BharatRouter Code — a coding agent on GLM through BharatRouter"
   homepage "https://bharatrouter.com/code"
   url "https://bharatrouter.com/cli/brcode", using: :nounzip
-  version "0.2.0"
-  sha256 "d464aa35df8351a8e46405f08c14eb65a457e4d85ac3035c91a7fe48b8425dcf"
+  version "0.3.0"
+  sha256 "7da25b86b0117306cd5fb51f7f96b612708310e6f5c724c871c181de00b9dba2"
   license "MIT"
 
   depends_on "node" # brcode installs/runs the OpenCode engine via npm
