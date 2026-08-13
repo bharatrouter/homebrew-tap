@@ -12,7 +12,9 @@ class Brcode < Formula
   depends_on "node" # brcode installs/runs the OpenCode engine via npm
 
   def install
-    bin.install "brcode"
+    # The download arrives named after the (versioned) URL basename — brcode-<version>,
+    # not "brcode" — so install it under the canonical name.
+    bin.install "brcode-#{version}" => "brcode"
     bin.install_symlink "brcode" => "br"
   end
 
