@@ -1,9 +1,12 @@
 class Brcode < Formula
   desc "BharatRouter Code — a coding agent on GLM through BharatRouter"
   homepage "https://bharatrouter.com/code"
-  url "https://bharatrouter.com/cli/brcode", using: :nounzip
-  version "0.5.2"
-  sha256 "38930c364bcb51cdfe3adaada36320d7ebcecb8dfebafa6cd3b62c4393457a7c"
+  # Pin the IMMUTABLE versioned artifact, not the rolling /cli/brcode — the
+  # unversioned URL is rewritten by every deploy, which invalidates the pinned
+  # sha and breaks `brew install`. Published by the site's build:done hook.
+  url "https://bharatrouter.com/cli/brcode-0.5.4", using: :nounzip
+  version "0.5.4"
+  sha256 "438a8117aad14107be7fe4b1a11f2ecc369d0c1925b20be21c893e24d5dee287"
   license "MIT"
 
   depends_on "node" # brcode installs/runs the OpenCode engine via npm
@@ -14,6 +17,6 @@ class Brcode < Formula
   end
 
   test do
-    assert_match "BharatRouter Code", shell_output("#{bin}/brcode --help")
+    assert_match(/BharatRouter/i, shell_output("#{bin}/brcode --help"))
   end
 end
