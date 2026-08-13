@@ -4,9 +4,9 @@ class Brcode < Formula
   # Pin the IMMUTABLE versioned artifact, not the rolling /cli/brcode — the
   # unversioned URL is rewritten by every deploy, which invalidates the pinned
   # sha and breaks `brew install`. Published by the site's build:done hook.
-  url "https://bharatrouter.com/cli/brcode-0.5.4", using: :nounzip
-  version "0.5.4"
-  sha256 "438a8117aad14107be7fe4b1a11f2ecc369d0c1925b20be21c893e24d5dee287"
+  url "https://bharatrouter.com/cli/brcode-0.5.5", using: :nounzip
+  version "0.5.5"
+  sha256 "7c9a86d4b47a6d824550b0cbd3fb004cf6c036764e2e8955b01042f30a13f896"
   license "MIT"
 
   depends_on "node" # brcode installs/runs the OpenCode engine via npm
