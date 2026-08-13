@@ -1,7 +1,10 @@
 class Brcode < Formula
   desc "BharatRouter Code — a coding agent on GLM through BharatRouter"
   homepage "https://bharatrouter.com/code"
-  url "https://bharatrouter.com/cli/brcode", using: :nounzip
+  # Pin the IMMUTABLE versioned artifact, not the rolling /cli/brcode — the
+  # unversioned URL is rewritten by every deploy, which invalidates the pinned
+  # sha and breaks `brew install`. Published by the site's build:done hook.
+  url "https://bharatrouter.com/cli/brcode-0.5.4", using: :nounzip
   version "0.5.4"
   sha256 "438a8117aad14107be7fe4b1a11f2ecc369d0c1925b20be21c893e24d5dee287"
   license "MIT"
